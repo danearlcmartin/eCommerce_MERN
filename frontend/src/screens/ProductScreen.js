@@ -13,11 +13,19 @@ import {
 import Rating from '../components/Rating';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listProductDetails } from '../actions/productActions';
+import {
+  listProductDetails,
+  createProductReview,
+} from '../actions/productActions';
 //import axios from 'axios'
+
+import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
+
   //const[product,setProduct] = useState({})
   const dispatch = useDispatch();
 
